@@ -1,6 +1,6 @@
 param environment string = 'dev'
 param location string = resourceGroup().location
-param storageAccountName string = 'my${environment}storage'
+var storageAccountName = 'my${environment}storage'
 
 var containerNames = [
   'logs'
