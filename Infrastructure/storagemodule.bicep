@@ -17,8 +17,11 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 }
 
 resource singleContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = {
-  name: 'ljgtest/default/testcontainer'
+  name: '${storageAccount.name}/default/testcontainer'
   properties: {
     publicAccess: 'None'
   }
+  dependsOn: [
+    storageAccount
+  ]
 }
