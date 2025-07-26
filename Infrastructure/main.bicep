@@ -1,9 +1,8 @@
 param environment string = 'dev'
 param location string = resourceGroup().location
 
-//param storageAccountName string = 'ljgdevenv'
-param storageAccountName string = toLower('my${environment}storage')
-
+param storageAccountName string = 'ljgdevenv'
+//param storageAccountName string = toLower('my${environment}storage')
 //var storageAccountName = 'my${environment}storage'
 //var storageAccountName = toLower('my${environment}storage')
 
