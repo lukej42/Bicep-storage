@@ -1,7 +1,7 @@
 param environment string = 'dev'
 param location string = resourceGroup().location
 
-param storageAccountName string = 'ljg-dev'
+param storageAccountName string = 'ljgdevenv'
 
 var containerNames = [
   'logs'
