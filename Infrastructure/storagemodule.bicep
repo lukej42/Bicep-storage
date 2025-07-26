@@ -17,7 +17,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 }
 
 resource blobContainers 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = [for containerName in containerNames: {
-  name: '${storageAccount.name}/default/${environment}-${containerName}'
+  name: '${storageAccount.name}/default/${toLower(environment)}-${toLower(containerName)}'
   properties: {
     publicAccess: 'None'
   }
