@@ -1,7 +1,7 @@
 param environment string = 'dev'
 param location string = resourceGroup().location
 
-var storageAccountName = toLower('my${environment}storage')
+param storageAccountName string = 'ljg-dev'
 
 var containerNames = [
   'logs'
