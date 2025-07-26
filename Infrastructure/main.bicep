@@ -1,6 +1,7 @@
 param environment string = 'dev'
 param location string = resourceGroup().location
-var storageAccountName = 'my${environment}storage'
+
+var storageAccountName = concat('my', environment, 'storage')
 
 var containerNames = [
   'logs'
