@@ -1,8 +1,8 @@
 param environment string = 'dev'
 param location string = resourceGroup().location
 
-//param storageAccountName string = 'ljgdevenv'
-var storageAccountName = 'my${environment}storage'
+param storageAccountName string = 'ljgdevenv'
+//var storageAccountName = 'my${environment}storage'
 
 
 var containerNames = [
