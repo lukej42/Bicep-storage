@@ -1,4 +1,3 @@
-// storage.bicep
 param storageAccountName string
 param location string
 param environment string
@@ -16,12 +15,12 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   }
 }
 
-resource singleContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = {
-  name: '${storageAccount.name}/default/testcontainer'
+resource blobContainers 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-01-01' = [for containerName in containerNames: {
+  name: '${storageAccount.name}/default/${toLower(environment)}-${toLower(containerName)}'
   properties: {
     publicAccess: 'None'
   }
   dependsOn: [
     storageAccount
   ]
-}
+}]
